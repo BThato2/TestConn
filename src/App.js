@@ -6,6 +6,7 @@ import React, { useState, useEffect } from 'react';
 import './App.css';
 import 'semantic-ui-less/semantic.less';
 import Ccp from './components/ccp';
+import Chatroom from './components/chatroom
 //import { autoSignIn } from '@aws-amplify/auth';
 
 // Component
@@ -26,9 +27,7 @@ function App() {
   //};
 
   return (
-    <div className="App">
-     
-    </div>
+     <Chatroom/>
   );
 }
 
