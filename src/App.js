@@ -6,29 +6,30 @@ import React, { useState, useEffect } from 'react';
 import './App.css';
 import 'semantic-ui-less/semantic.less';
 import Ccp from './components/ccp';
-import Chatroom from './components/chatroom
 //import { autoSignIn } from '@aws-amplify/auth';
 
 // Component
-function App() {
-  //const [isConfigured, setIsConfigured] = useState(false);
+function App({ signOut, user }) {
+  const [isConfigured, setIsConfigured] = useState(false);
   
-  // useEffect(() => {
-  //   configureAuth();
-  //   //signedIn();
-  // }, []);
+  useEffect(() => {
+    configureAuth();
+    //signedIn();
+  }, []);
 
-  // const configureAuth = () => {
-  //   Amplify.configure(awsconfig);
-  //   setIsConfigured(true);
-  // };
+  const configureAuth = () => {
+    Amplify.configure(awsconfig);
+    setIsConfigured(true);
+  };
   //const signedIn = async () => {
     //await autoSignIn();
   //};
 
   return (
-     <Chatroom/>
+    <div className="App">
+      {isConfigured && <Ccp user={user} signOut={signOut} />}
+    </div>
   );
 }
 
-export default (App);
+export default withAuthenticator(App);
