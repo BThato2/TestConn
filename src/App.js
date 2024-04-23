@@ -9,27 +9,27 @@ import Ccp from './components/ccp';
 //import { autoSignIn } from '@aws-amplify/auth';
 
 // Component
-function App({ signOut, user }) {
-  const [isConfigured, setIsConfigured] = useState(false);
+function App() {
+  //const [isConfigured, setIsConfigured] = useState(false);
   
-  useEffect(() => {
-    configureAuth();
-    //signedIn();
-  }, []);
+  // useEffect(() => {
+  //   configureAuth();
+  //   //signedIn();
+  // }, []);
 
-  const configureAuth = () => {
-    Amplify.configure(awsconfig);
-    setIsConfigured(true);
-  };
+  // const configureAuth = () => {
+  //   Amplify.configure(awsconfig);
+  //   setIsConfigured(true);
+  // };
   //const signedIn = async () => {
     //await autoSignIn();
   //};
 
   return (
     <div className="App">
-      {isConfigured && <Ccp user={user} signOut={signOut} />}
+     
     </div>
   );
 }
 
-export default withAuthenticator(App);
+export default (App);
